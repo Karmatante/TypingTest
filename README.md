@@ -34,13 +34,15 @@ The first working version includes:
                ╚════════════════════════════════╝
 
 ╔══════════════════════╗    ╔══════════════════════╗
-║ Korrekta tecken: 297 ║    ║ Totalt antal fel: 5  ║
+║ Korrekta tecken: 297 ║    ║ Totalt antal fel: 5 ║
 ╚══════════════════════╝    ╚══════════════════════╝
 
                ╔═══════════════════════╗
                ║ Noggrannhet: 98.34 % ║
                ╚═══════════════════════╝
-How accuracy works in v0.1
+```
+
+## How accuracy works in v0.1
 
 Version 0.1 uses a simple character-by-character comparison.
 
@@ -48,21 +50,25 @@ The program compares the character at each position in the original text with th
 
 For example:
 
+```text
 Original: Java
 Input:    Jxva
+```
 
 The program can correctly detect that one character is different.
 
 The program also checks whether the user's text is shorter or longer than the original and counts missing or extra characters as errors.
 
-Known limitation in v0.1
+## Known limitation in v0.1
 
 The current accuracy system does not understand when a character has been inserted or removed in the middle of the text.
 
 For example:
 
+```text
 Original: spricka
 Input:    sproicka
+```
 
 Only one extra character was added, but all characters after that point move one position.
 
@@ -72,32 +78,34 @@ This means that the accuracy percentage can sometimes be much lower than expecte
 
 This is a known limitation of version 0.1 and something I plan to improve in a later version.
 
-Built with
-Java 26
-IntelliJ IDEA
-Java console input/output
-ANSI escape codes for colours
+## Built with
+
+- Java 26
+- IntelliJ IDEA
+- Java console input/output
+- ANSI escape codes for colours
 
 No GUI framework or web framework is used in version 0.1.
 
-What I practised in this project
+## What I practised in this project
 
 This project helped me practise:
 
-Variables and data types
-Strings
-Arrays
-for loops
-if / else if
-Character comparison with charAt()
-Math.min()
-Math.round()
-Type casting
-Time calculations
-Percentage calculations
-Console formatting
-Breaking a larger programming problem into smaller steps
-Next version
+- Variables and data types
+- Strings
+- Arrays
+- `for` loops
+- `if / else if`
+- Character comparison with `charAt()`
+- `Math.min()`
+- `Math.round()`
+- Type casting
+- Time calculations
+- Percentage calculations
+- Console formatting
+- Breaking a larger programming problem into smaller steps
+
+## Next version
 
 For version 0.2 I want to continue improving the program, especially the way typing errors are compared.
 
