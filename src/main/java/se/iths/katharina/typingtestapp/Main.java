@@ -1,6 +1,10 @@
 package se.iths.katharina.typingtestapp;
 
 import se.iths.katharina.typingtestapp.model.Ansi;
+import se.iths.katharina.typingtestapp.model.TypingText;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -9,6 +13,66 @@ public class Main {
 
         // Visar introduktion och texten som användaren ska skriva av.
         showIntroduction();
+
+        // Här skapar du listan med dina TypingText-objekt.
+        List<TypingText> texts = new ArrayList<>();
+
+        texts.add(new TypingText(
+                "En lugn morgon",
+                "Lätt",
+                """
+                        Solen lyste in genom köksfönstret när Emma satte sig vid bordet. Hon åt en smörgås och drack ett glas juice medan katten låg på stolen bredvid. Utanför gick några människor förbi på väg till jobbet. Det var en lugn morgon, och Emma hade gott om tid innan hon behövde gå hemifrån.
+                        """.strip()
+        ));
+
+        texts.add(new TypingText(
+                "Bussen som nästan missades",
+                "Ganska lätt",
+                """
+                        När Leo såg på klockan insåg han att bussen skulle gå om fem minuter. Han tog snabbt på sig jackan, stoppade mobilen i fickan och sprang mot hållplatsen. Precis när han kom runt hörnet såg han bussen närma sig. Föraren väntade några sekunder extra, och Leo hann kliva på med andan i halsen.
+                        """.strip()
+        ));
+
+        texts.add(new TypingText(
+                "Det gamla biblioteket",
+                "Medel",
+                """
+                        Biblioteket längst ner på torget hade funnits där så länge någon kunde minnas. Mellan de höga bokhyllorna luktade det svagt av papper och trä, och varje steg ekade genom de tysta rummen. En eftermiddag upptäckte Nora en smal dörr bakom en hylla. På dörren satt en liten skylt med orden: Endast för personal.
+                        """.strip()
+        ));
+
+        texts.add(new TypingText(
+                "Efter regnet",
+                "Medel",
+                """
+                        Det regnade hela morgonen, men framåt eftermiddagen började molnen sakta spricka upp över staden. Människor lämnade sina paraplyer hemma och fyllde parkerna, medan barnen sprang mellan de blöta träden. När solen till slut kom fram glittrade vattnet på gatorna och luften kändes plötsligt varm och klar.
+                        """.strip()
+        ));
+
+        texts.add(new TypingText(
+                "Stormen över staden",
+                "Svår",
+                """
+                        Under eftermiddagen hade mörka moln samlats över staden, men ingen verkade särskilt orolig förrän vinden plötsligt ökade. Cyklar välte längs trottoarerna, lösa reklamskyltar skramlade mot marken och människor skyndade mot närmaste entré. När regnet till slut föll kom det så kraftigt att husen på andra sidan gatan nästan försvann bakom ett grått draperi av vatten.
+                        """.strip()
+        ));
+
+        texts.add(new TypingText(
+                "Observatoriet på berget",
+                "Mycket svår",
+                """
+                        Klockan 22.47 öppnades taket på det lilla observatoriet högst uppe på berget. Temperaturen hade sjunkit till minus fyra grader, och den klara vinterluften gjorde stjärnhimlen ovanligt tydlig. Astronomen justerade teleskopets position med några millimeter och kontrollerade koordinaterna ännu en gång. Någonstans mellan Cassiopeia och Andromeda syntes ett svagt ljus som inte hade funnits på gårdagens fotografier; frågan var om det verkligen var något nytt.                        """.strip()
+        ));
+
+        // Sedan visar du menyn med titlarna.
+
+        // Sedan läser du användarens val.
+
+        // Sedan hämtar du rätt TypingText från listan.
+
+        // Först därefter visar du själva skrivtexten
+        // och startar tidtagningen.
+
 
         IO.println();
 
