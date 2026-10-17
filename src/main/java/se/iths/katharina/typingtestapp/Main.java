@@ -8,12 +8,14 @@ import se.iths.katharina.typingtestapp.ui.ConsoleUI;
 
 import java.util.List;
 
+
 public class Main {
 
     static void main() {
 
 
         TypingTextCatalog typingTextCatalog = new TypingTextCatalog();
+        List<TypingText> yamlTexts = typingTextCatalog.loadTextsFromYaml();
         TypingTestCalculator typingTestCalculator = new TypingTestCalculator();
         ConsoleUI consoleUI = new ConsoleUI();
 
@@ -21,8 +23,16 @@ public class Main {
         consoleUI.showDifficultyMenu();
         int difficultyChoice = consoleUI.readDifficultyChoice();
 
-        List<TypingText> texts = typingTextCatalog.getTexts();
-        String originalText = texts.get(0).getText();
+        String selectedDifficulty = selectDifficulty(difficultyChoice);
+
+        TypingText selectedText = typingTextCatalog.findTextByDifficulty(selectedDifficulty);
+
+        if (selectedText == null) {
+            consoleUI.showErrorMessage();
+            return;
+        }
+
+        String originalText = selectedText.getText();
 
         consoleUI.showReadingText(originalText);
         consoleUI.showStartInstruction();
@@ -38,17 +48,6 @@ public class Main {
 
         consoleUI.showResults(typingTestResult);
 
-
-        String selectedDifficulty = selectDifficulty(difficultyChoice);
-        
-//HÄR FORTSÄTTER DU - behöver fångar NullPointerException i selectedText.getText()
-        TypingText selectedText = null;
-        for (TypingText typingText : texts) {
-            if (selectedDifficulty.equals(typingText.getDifficulty())) {
-                selectedText = typingText;
-                break;
-            }
-        }
     }
 
 

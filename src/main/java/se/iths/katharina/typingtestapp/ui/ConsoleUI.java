@@ -142,4 +142,9 @@ public class ConsoleUI {
         return difficultyChoice;
     }
 
+
+    public void showErrorMessage() {
+        IO.println("Det finns ingen text för den valda svårighetsgraden.");
+    }
+
 }
