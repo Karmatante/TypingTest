@@ -18,12 +18,19 @@ public class TypingTestCalculator {
     }
 
     public long calculateWpm(int wordCount, double inSeconds) {
+        if (inSeconds <= 0) {
+            throw new IllegalArgumentException("Tiden får inte vara 0 eller lägre.");
+        }
+
+        if (wordCount < 0) {
+            throw new IllegalArgumentException("Ordantal får inte vara negativt.");
+        }
+
         // Omvandlar tiden till minuter för att kunna räkna ord per minut.
         double timeInMinutes = inSeconds / 60;
 
         double wpm = wordCount / timeInMinutes;
         return Math.round(wpm);
-
     }
 
     public int calculateLevenshteinDistance(String originalText, String userInput) {
